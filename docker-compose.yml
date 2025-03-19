@@ -1,0 +1,21 @@
+services:
+  main:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: donhamon
+    command: uvicorn server.main:app --host 0.0.0.0 --port 8080
+    ports:
+      - "8010:8080"
+    volumes:
+      - ./config:/app/config
+      - ./core:/app/core
+      - ./handlers:/app/handlers
+      - ./logs:/app/logs
+      - ./photos:/app/photos
+      - ./server:/app/server
+      - ./services:/app/services
+      - ./status_crm:/app/status_crm
+      - ./test:/app/test
+      - ./vector_store:/app/vector_store
+
