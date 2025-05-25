@@ -25,7 +25,7 @@ def amo_api_data() -> Optional[Dict[str, str]]:
                 "chat_token": response_data.get('chat_token')
             }
         else:
-            logger.error(f"HTTP ошибка: {response.status_code} - {response.text}")
+            print("hello world")
     except Exception as e:
         logger.error(f"Произошла неизвестная ошибка: {e}")
 
